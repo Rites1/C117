@@ -1,0 +1,15 @@
+body{
+    background-color: rgb(42, 166, 42);
+}
+#span_score{
+    font-size: 25px;
+    margin-left: 20px;
+}
+#span_time{
+    font-size: 25px;
+    float:right;
+    margin-right: 20px;
+}
+#sketch_name{
+    color: darkred;
+}
