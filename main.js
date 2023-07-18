@@ -11,22 +11,17 @@ score = 0;
 
 function updateCanvas(){
     background("white");
-    random_number = Math.floor((Math.random()*quick_draw_data_set.length)+1);
-    sketch = quick_draw_data_set[random_number];
+    random_no = Math.floor((Math.random()*quick_draw_data_set.length)+1);
+    sketch = quick_draw_data_set[random_no];
     document.getElementById("sketch_name").innerHTML = "sketch to be drawn : "+ sketch;
 }
 
-check_sketch();
-if (drawn_sketch == sketch){
-    answer_holder = "set";
-    score++;
-    document.getElementById("span_score").innerHTML = "score : "+ score;
-}
+
 
 function check_sketch(){
     timer_counter++;
     document.getElementById("span_time").innerHTML = "Timer : "+ timer_counter;
-    if(timer_counter>400){
+    if(timer_counter>1000){
         timer_counter = 0;
         timer_check = "Completed";
     }
@@ -56,6 +51,12 @@ function draw(){
     if(mouseIsPressed){
         line(pmouseX, pmouseY, mouseX, mouseY);
     }
+    check_sketch();
+if (drawn_sketch == sketch){
+    answer_holder = "set";
+    score++;
+    document.getElementById("span_score").innerHTML = "score : "+ score;
+}
 }
 
 function classifyCanvas(){
